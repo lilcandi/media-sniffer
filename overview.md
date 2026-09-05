@@ -2,6 +2,13 @@
 
 嗅探网页中的视频、音频、图片及 m3u8(HLS) / mpd(DASH) 流媒体资源，支持一键复制、下载并**自动合并为完整视频**。
 
+## 发布信息（GitHub）
+
+- **仓库**：https://github.com/lilcandi/media-sniffer （public）
+- **本地提交**：`677f7ec` `main` → 远程 `main` 一致
+- **打包产物**：`media-sniffer-v1.5.0.zip`（项目根，被 .gitignore 排除不入库；含运行文件 + 安装说明，开发者模式解压加载）
+- **推送技术备注**：本机走 Watt Toolkit(SOCKS 7897) 访问 GitHub。git 默认 schannel 栈经代理 TLS 会崩，须用 `openssl` 后端 + 桥接透传代理；详见 `_pkg_tmp/bridge_proxy.py` 与 `gitpush.sh`（复用工具，留在临时目录）。
+
 ## v1.5.0 架构重构（m3u8 下载迁至独立扩展页 — 参考 cat-catch 根治 Chrome 下载中断）
 
 **用户现象**：换到 Chrome 后「无论如何都下载不了完整视频」（v1.4.x 在 Edge 实测可用，但依赖 SW 的下载合并链路脆弱）。

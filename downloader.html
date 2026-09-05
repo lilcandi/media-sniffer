@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="vYZtHzIccFD3R2R9WAhHfG">
+<head data-page-node-id="nxhIlNne1kxrlaxVEiiNwr">
+  <meta charset="UTF-8" data-page-node-id="jDBfp8B65gpKtYZLjh99Sk" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="SrjhecvaLpD1wPkFAJxLlQ" />
+  <title>媒体下载合并</title>
+  <style>
+    :root {
+      --bg: #f6f7f9;
+      --panel: #ffffff;
+      --border: #e3e6ea;
+      --text: #1f2328;
+      --text2: #6b7280;
+      --accent: #2563eb;
+      --accent-soft: #eff4ff;
+      --danger: #dc2626;
+      --ok: #059669;
+      --warn: #d97706;
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    .hidden { display: none !important; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font: 14px/1.6 -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif;
+      padding: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    h1 { font-size: 18px; margin-bottom: 4px; }
+    .sub { color: var(--text2); font-size: 12px; margin-bottom: 18px; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .card .title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      word-break: break-all;
+    }
+    .card .title .fn { flex: 1; font-size: 13px; }
+    .status-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 10px;
+      color: #fff;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .st-queued  { background: #64748b; }
+    .st-working { background: var(--accent); }
+    .st-done    { background: var(--ok); }
+    .st-error   { background: var(--danger); }
+    .bar { height: 8px; background: #e9edf2; border-radius: 5px; overflow: hidden; margin: 10px 0 6px; }
+    .bar > i { display: block; height: 100%; width: 0%; background: var(--accent); border-radius: 5px; transition: width .2s; }
+    .meta { font-size: 12px; color: var(--text2); margin-bottom: 8px; }
+    .path {
+      font-size: 12px;
+      background: var(--accent-soft);
+      color: #1d4ed8;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-top: 8px;
+      word-break: break-all;
+    }
+    .error {
+      font-size: 12px;
+      color: var(--danger);
+      background: #fef2f2;
+      border: 1px solid #f3c1c1;
+      border-radius: 6px;
+      padding: 8px 10px;
+      margin-top: 8px;
+      word-break: break-all;
+    }
+    .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    button {
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 5px 12px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    button:hover { border-color: var(--accent); color: var(--accent); }
+    button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    button.primary:hover { background: #1d4ed8; color: #fff; }
+    button:disabled { opacity: .5; cursor: not-allowed; }
+    button.danger { color: var(--danger); border-color: #f3c1c1; }
+    button.danger:hover { background: #fef2f2; color: var(--danger); }
+    a.link { color: var(--accent); text-decoration: none; }
+    a.link:hover { text-decoration: underline; }
+    .muted { color: var(--text2); font-size: 12px; }
+    .empty-tip { color: var(--text2); text-align: center; padding: 40px 0; }
+    .queue-note { font-size: 12px; color: var(--warn); margin-top: 6px; }
+  </style>
+</head>
+<body data-page-node-id="pBUyyDvdD12lBhgbntIr3o">
+  <h1 data-page-node-id="xMw36msFS6ECF0vGFyhZQh">📥 媒体下载合并</h1>
+  <div class="sub" data-page-node-id="GGp3yQTnuTGY2rE2EEuADc">本页负责抓取并合并 m3u8/HLS 分片（含 AES-128 解密），完成后自动保存到浏览器下载目录。请保持本标签页打开。</div>
+
+  <div id="queue" data-page-node-id="iaIX6fLvyq6LVQVpbBOAKy"></div>
+  <div class="empty-tip" id="emptyTip" data-page-node-id="18MhFP53Wzs9cgsyGlq2Hm">正在等待下载任务…<br data-page-node-id="DHOfMS30lq4b28BcpvC6Fh"/>在任意页面的嗅探弹窗中点击「🎬 下载完整视频」会自动把任务送到这里。</div>
+
+  <script src="downloader.js"></script>
+</body>
+</html>

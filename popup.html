@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="5hvzbGPRF5ipG5JMS2gUQ4">
+<head data-page-node-id="40R3Ah9HQTO82AfMxg72pX">
+  <meta charset="UTF-8" data-page-node-id="kjQYGH9nQ4I477DGvSibKr" />
+  <link rel="stylesheet" href="popup.css" data-page-node-id="pYWlgxWbvIIUpB9C0MjAWC" />
+</head>
+<body data-page-node-id="GOOBdA4Irpnn39dyGW1iLj">
+  <header class="topbar" data-page-node-id="IIAEyDVQ7QpbG8Eooj9cB7">
+    <div class="logo" data-page-node-id="i8ioZmtU9t9ZyGnwdKckkl">📡 Media Sniffer</div>
+    <button id="rescan" class="btn ghost" title="重新扫描当前页面" data-page-node-id="0hyBsOnhkBwBmi9MH4DccB">重扫</button>
+  </header>
+
+  <div class="tabs" id="tabs" data-page-node-id="I0OFkjFv4O4Ffked5HakMQ">
+    <button class="tab active" data-cat="all" data-page-node-id="qKbklyKsMF5DL6BE34PceN">全部 <span class="cnt" id="cnt-all" data-page-node-id="kOGgQ8Xrx5I6TABhqHVj4w">0</span></button>
+    <button class="tab" data-cat="video" data-page-node-id="kQmAxkYf5ipQPIsZxAgFzL">视频 <span class="cnt" id="cnt-video" data-page-node-id="E9TCauzPlEgfszrZZmclAE">0</span></button>
+    <button class="tab" data-cat="audio" data-page-node-id="rMaXrCWDyhFQdegoSQe8Bn">音频 <span class="cnt" id="cnt-audio" data-page-node-id="AAEGSzbi6i8YBJYnhBLQBh">0</span></button>
+    <button class="tab" data-cat="stream" data-page-node-id="MOu3FEg8GeY3kfr3WUVzUv">流媒体 <span class="cnt" id="cnt-stream" data-page-node-id="H0MfDasimf6ea0XqMDYHOv">0</span></button>
+    <button class="tab" data-cat="image" data-page-node-id="syF3KIYglfUYDpgHCsKjkG">图片 <span class="cnt" id="cnt-image" data-page-node-id="d3DmEII0FbHGQJSeE3sJdY">0</span></button>
+  </div>
+
+  <div class="searchbar" data-page-node-id="9dLjEpcgGQr04DcERVZ818">
+    <input id="search" type="text" placeholder="搜索文件名或链接…" data-page-node-id="gDQBUWDndtZvZ3MrzPUAWb" />
+  </div>
+
+  <div class="options" data-page-node-id="fj1LclL8Dt5GDiVHfHRboc">
+    <label data-page-node-id="aop5JkEukcpa6rkZQXOmx7"><input type="checkbox" id="filterSmall" data-page-node-id="YNmQC6n9pUjBrxy4FVVqLV" /> 忽略 &lt; 10KB 的图片</label>
+    <button id="copyAll" class="btn ghost small" data-page-node-id="719sRjRnF3PH1X9UDG55n5">复制全部链接</button>
+    <button id="downloadAll" class="btn ghost small" data-page-node-id="42pAcKpHcJ9LGWmCSmi3oY">下载全部</button>
+    <button id="clear" class="btn danger small" data-page-node-id="iCJ5ARATsAeHnAk63OP32T">清空</button>
+  </div>
+
+  <main id="list" class="list" data-page-node-id="BT5ytHkbmoZFCXhCVsX5RG"></main>
+
+  <div id="empty" class="empty hidden" data-page-node-id="oZ5pHDCvg9ICf26o5NR5d3">
+    <div class="empty-icon" data-page-node-id="bQ3TMEqMSaAE2OlBE4dT3H">🔍</div>
+    <p data-page-node-id="7ySbYUi8M1PEVl3v0jNWPd">暂未嗅探到媒体资源</p>
+    <p class="hint" data-page-node-id="URks4qUajL6wjmXtHnaXqj">播放页面上的视频/音频后点击「重扫」</p>
+  </div>
+
+  <footer class="statusbar" data-page-node-id="nycV991Tv9xaZAjepuigO4">
+    <span id="status" data-page-node-id="vITcqleTxXKTMB2qONas2R"></span>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# 测试/下载残留（浏览器 profile 与媒体下载产物）
+test/dl-out/
+
+# 媒体下载/合并产物（.ts 分片合并、mp4 等）
+*.ts
+*.mp4
+!icons/*.ts
+
+# 打包暂存与产物
+media-sniffer-*.zip
+_pkg_tmp/
+
+# 系统/编辑器
+Thumbs.db
+.DS_Store
+*.log
